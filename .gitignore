@@ -1,0 +1,10 @@
+*.csv
+*.xlsx
+*.xls
+*.zip
+*.pkl
+*.joblib
+.*deps*
+.*wheels*
+__pycache__/
+.venv/
