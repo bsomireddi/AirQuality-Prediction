@@ -468,9 +468,17 @@ with c4:
       delta_color='off',
   )
 with c5:
+  wind_val = 2.0
+  if 'live_data' in locals() and isinstance(live_data, dict):
+    wind_val = (
+        live_data.get('wind_speed')
+        or live_data.get('wind_speed_ms')
+        or live_data.get('wind')
+        or 2.0
+    )
   st.metric(
       label='Wind Speed',
-      value=f'{wind_m_s:.1f} m/s',
+      value=f'{float(wind_val):.1f} m/s',
       delta='Suwon ASOS #119',
       delta_color='off',
   )
