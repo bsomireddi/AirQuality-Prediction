@@ -440,40 +440,40 @@ st.caption('Real-time sensor measurements from AirKorea/WAQI feed and meteorolog
 
 c1, c2, c3, c4, c5 = st.columns(5)
 with c1:
-    st.metric(
-        label='PM2.5 NOW',
-        value=f'{live_pm25:.1f} µg/m³',
-        delta=f'{icon_pm25} {grade_pm25}',
-        delta_color='off'
-    )
+  st.metric(
+      label='PM2.5 NOW',
+      value=f'{live_pm25:.1f} µg/m³',
+      delta=f'{icon_pm25} {grade_pm25}',
+      delta_color='off',
+  )
 with c2:
-    st.metric(
-        label='PM10 NOW',
-        value=f'{live_pm10:.1f} µg/m³',
-        delta=f'{icon_pm10} {grade_pm10}',
-        delta_color='off'
-    )
+  st.metric(
+      label='PM10 NOW',
+      value=f'{live_pm10:.1f} µg/m³',
+      delta=f'{icon_pm10} {grade_pm10}',
+      delta_color='off',
+  )
 with c3:
-    st.metric(
-        label='Temperature',
-        value=f"{live_data['temperature_c']:.1f} °C",
-        delta='Suwon ASOS #119',
-        delta_color='off'
-    )
+  st.metric(
+      label='Temperature',
+      value=f"{live_data['temperature_c']:.1f} °C",
+      delta='Suwon ASOS #119',
+      delta_color='off',
+  )
 with c4:
-    st.metric(
-        label='Humidity',
-        value=f"{live_data['humidity_pct']:.1f} %",
-        delta='Suwon ASOS #119',
-        delta_color='off'
-    )
+  st.metric(
+      label='Humidity',
+      value=f"{live_data['humidity_pct']:.1f} %",
+      delta='Suwon ASOS #119',
+      delta_color='off',
+  )
 with c5:
-    st.metric(
-        label='Wind Speed',
-        value = f"{live_data.get('wind_speed', live_data.get('wind_m_s', 2.0)):.1f} m/s"
-        delta='Suwon ASOS #119',
-        delta_color='off'
-    )
+  st.metric(
+      label='Wind Speed',
+      value=f'{wind_m_s:.1f} m/s',
+      delta='Suwon ASOS #119',
+      delta_color='off',
+  )
 st.divider()
 
 # -------------------------------------------------------------
