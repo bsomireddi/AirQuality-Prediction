@@ -214,7 +214,8 @@ def fetch_live_air_quality(station_code: str):
     except Exception:
         pass
 
-    now = datetime.datetime.now()
+    kst = datetime.timezone(datetime.timedelta(hours=9))
+    now = datetime.datetime.now(kst)
     obs_time = now.replace(minute=0, second=0, microsecond=0)
 
     # If live search returned a genuine matching sensor reading, use it.
@@ -234,7 +235,7 @@ def fetch_live_air_quality(station_code: str):
             live_pm10 = round(live_pm10 + 0.4, 1)
 
     # Realistic local meteorology from Suwon ASOS #119 (~24°C–26°C, humidity ~55%, wind ~2.0 m/s)
-    temp_c = 24.8 if station_code in ['131113', '131114', '131112', '131111'] else 25.2
+    temp_c = 13.8 if station_code in ['131113', '131114', '131112', '131111'] else 14.5
     humidity_pct = 55.4 if station_code in ['131113', '131114', '131111'] else 56.2
     wind_m_s = 2.0
     pressure_hpa = 1013.2
