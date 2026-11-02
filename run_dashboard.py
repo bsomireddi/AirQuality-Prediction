@@ -470,7 +470,7 @@ with c4:
 with c5:
     st.metric(
         label='Wind Speed',
-        value=f"{live_data['wind_m_s']:.1f} m/s",
+        value = f"{live_data.get('wind_speed', live_data.get('wind_m_s', 2.0)):.1f} m/s"
         delta='Suwon ASOS #119',
         delta_color='off'
     )
