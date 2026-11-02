@@ -440,41 +440,45 @@ st.caption('Real-time sensor measurements from AirKorea/WAQI feed and meteorolog
 
 c1, c2, c3, c4, c5 = st.columns(5)
 with c1:
+  with st.container(border=True):
     st.metric(
         label='PM2.5 NOW',
         value=f'{live_pm25:.1f} µg/m³',
         delta=f'{icon_pm25} {grade_pm25}',
-        delta_color='off'
+        delta_color='off',
     )
 with c2:
+  with st.container(border=True):
     st.metric(
         label='PM10 NOW',
         value=f'{live_pm10:.1f} µg/m³',
         delta=f'{icon_pm10} {grade_pm10}',
-        delta_color='off'
+        delta_color='off',
     )
 with c3:
+  with st.container(border=True):
     st.metric(
         label='Temperature',
         value=f"{live_data['temperature_c']:.1f} °C",
         delta='Suwon ASOS #119',
-        delta_color='off'
+        delta_color='off',
     )
 with c4:
+  with st.container(border=True):
     st.metric(
         label='Humidity',
         value=f"{live_data['humidity_pct']:.1f} %",
         delta='Suwon ASOS #119',
-        delta_color='off'
+        delta_color='off',
     )
 with c5:
+  with st.container(border=True):
     st.metric(
         label='Wind Speed',
-        value=f"{live_data['wind_speed_m_s']:.1f} m/s",
+        value=f"{live_data['wind_m_s']:.1f} m/s",
         delta='Suwon ASOS #119',
-        delta_color='off'
+        delta_color='off',
     )
-
 st.divider()
 
 # -------------------------------------------------------------
